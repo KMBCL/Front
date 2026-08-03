@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<title>Trying to display things</title>
+
+<h1>Fucking movies!</h1>
+
+<ul id="best-movies-per-categories">
+    <div>Best movie per categories :</div>    
+</ul>
+
+<div>
+    <h2>Best movie ever :</h2>
+    <image id="best-movie-image">Movie image<image/>
+    <div id="best-movie-title">Movie title</div>
+    <div id="best-movie-summary">Movie summary</div>
+    <!--
+        best movie container. Always one.
+        image
+        title
+        detail button
+    -->
+</div>
+
+<div>
+    <h2>Best movies</h2>
+    <!--
+        best movies container. List. 2/4mobile, 4/2pad, 6PC
+        exclude best movie ever.
+        image
+        title
+        detail button
+    -->
+    <ul id="best-movies">
+
+    </ul>
+</div>
+
+<div>
+    <h2>Best Horror</h2>
+    <!--
+        best movies container. List. 2/4mobile, 4/2pad, 6PC
+        image
+        title
+        detail button
+        
+        if container is streched : show more button
+    -->
+    <ul id="best-horror-movies">
+
+    </ul>
+</div>
+
+<div>
+    <h2>Best Action</h2>
+    <!--
+        best movies container. List. 2/4mobile, 4/2pad, 6PC
+        image
+        title
+        detail button
+        
+        if container is streched : show more button
+    -->
+    <ul id="best-action-movies">
+
+    </ul>
+</div>
+
+<div>
+    <h2>Others</h2>
+    <select id="other-genres">
+        <option value="Action">Action</option>
+        <option value="Horror">Horror</option>
+    </select>
+    <!--
+        full categorie list. needs to fetch and fill selector.
+        selector changes (event) > fetch best movies with selected value
+        best movies container. List. 2/4mobile, 4/2pad, 6PC
+        image
+        title
+        detail button
+        
+        if container is streched : show more button
+    -->
+    <ul id="best-others-movies">
+
+    </ul>
+</div>
+
+
+<option value="One, Two"></option>
+
+<script src="movieFetcher.js" defer> </script>
