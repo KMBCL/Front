@@ -1,5 +1,3 @@
-import { fetchBestOtherGenreMovies } from "./movieFetch.js";
-
 export function displayBestMovie(movie, elementID) {
     const titelTag = document.getElementById("best-movie-title");
     const imageTag = document.getElementById("best-movie-image");
@@ -23,14 +21,10 @@ export function displayMovies(itemList, elementID) {
 
 export function resetOtherMovies() {
     const otherGenreMovies = document.getElementById("best-others-movies");
-    otherGenreMovies.replaceChildren()
+    otherGenreMovies.replaceChildren();
 }
 
-export async function selectOtherGenreMovies() {
-    resetOtherMovies()
-
-    const genreSelector = document.getElementById("other-genres");
-    const selectedGenre = genreSelector.value;
-    const otherGenreMovies = await fetchBestOtherGenreMovies(selectedGenre);
+export function displayOtherGenreMovies(otherGenreMovies) {
+    resetOtherMovies();
     displayMovies(otherGenreMovies, "best-others-movies");
 }

@@ -47,7 +47,6 @@ export async function fetchMovieDetail(movieID) {
     return movie
 }
 
-
 export async function fetchBestMovie() {
     const bestMovieURL = "http://localhost:8000/api/v1/titles/?sort_by=-imdb_score";
     return fetchMovies(bestMovieURL, 1);
@@ -58,25 +57,22 @@ export async function fetchGenres() {
     return fetchMovies(genresUrl);
 }
 
-export async function fetchBestMovieByGenre(genre) {
+export async function fetchGenreBestMovies(genre) {
     const bestMovieURL = `http://localhost:8000/api/v1/titles/?genre=${genre}&sort_by=-imdb_score`;
-    return fetchMovies(bestMovieURL, 1);
+    return fetchMovies(bestMovieURL, 6);
 }
 
 export async function fetchBestHorrorMovies() {
-    const bestMovieURL = `http://localhost:8000/api/v1/titles/?genre=Horror&sort_by=-imdb_score`;
+    const bestMovieURL = fetchGenreBestMovies("Horror");
     return fetchMovies(bestMovieURL, 6);
 }
 
 export async function fetchBestActionMovies() {
-    const bestMovieURL = `http://localhost:8000/api/v1/titles/?genre=Action&sort_by=-imdb_score`;
+    const bestMovieURL = fetchGenreBestMovies("Action");
     return fetchMovies(bestMovieURL, 6);
 }
 
-export async function fetchBestOtherGenreMovies(genre) {
-    const bestMovieURL = `http://localhost:8000/api/v1/titles/?genre=${genre}&sort_by=-imdb_score`;
-    return fetchMovies(bestMovieURL, 6);
-}
+
 
 
 

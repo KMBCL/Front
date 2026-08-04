@@ -1,4 +1,4 @@
-export async function popMovieDetail() {
+export async function popMovieDetail(movieDetails) {
     const detailButton = document.getElementById("detail-button")
     console.log("pull my finger", detailButton.value);
 

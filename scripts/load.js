@@ -1,8 +1,8 @@
 import { fetchBestMovie, fetchMovieDetail, fetchBestHorrorMovies, fetchBestActionMovies } from "./movieFetch.js";
-import { displayBestMovie, displayMovies, selectOtherGenreMovies } from "./display.js";
+import { displayBestMovie, displayMovies } from "./display.js";
 import { setSelectListener, setDetailButtonListener } from "./event.js";
 import { popMovieDetail } from "./popup.js";
-
+import { selectOtherGenreMovies } from "./action.js";
 
 async function load() {
 
