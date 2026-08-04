@@ -124,7 +124,8 @@ async function fetchBestMoviesByGenre() {
 
 
 async function init() {
-    setSelectListener();
+
+
     const bestMovie = await fetchBestMovie();
     const bestMovieDetail = await fetchMovieDetail(bestMovie[0].id);
     const bestMoviesByGenre = await fetchBestMoviesByGenre();
@@ -134,11 +135,20 @@ async function init() {
     displayListInDocument(bestMoviesByGenre, "best-movies-per-categories");
     displayMovies(bestHorrorMovies, "best-horror-movies");
     displayMovies(bestActionMovies, "best-action-movies");
+
+    setSelectListener();
+    setDetailButtonListener(bestMovieDetail.id);
 }
 
 function setSelectListener() {
     const selectOtherGenre = document.getElementById("other-genres");
     selectOtherGenre.addEventListener("change", selectOtherGenreMovies);
+}
+
+function setDetailButtonListener(movieID) {
+    const detailButton = document.getElementById("detail-button")
+    detailButton.addEventListener("click", popMovieDetail)
+    detailButton.value = movieID
 }
 
 function resetOtherMovies() {
@@ -149,12 +159,20 @@ function resetOtherMovies() {
 async function selectOtherGenreMovies() {
     resetOtherMovies()
 
-    const genreSelector = document.getElementById("other-genres")
+    const genreSelector = document.getElementById("other-genres");
     const selectedGenre = genreSelector.value;
     const otherGenreMovies = await fetchBestOtherGenreMovies(selectedGenre);
     displayMovies(otherGenreMovies, "best-others-movies");
 }
 
+async function popMovieDetail() {
+    const detailButton = document.getElementById("detail-button")
+    console.log("pull my finger", detailButton.value);
+
+    const popup = document.getElementById("detail-popup");
+    console.log("popup", popup);
+    popup.showModal();
+}
 
 init()
 
