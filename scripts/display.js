@@ -1,14 +1,6 @@
-export function displayBestMovie(movie, elementID) {
-    const titelTag = document.getElementById("best-movie-title");
-    const imageTag = document.getElementById("best-movie-image");
-    const summaryTag = document.getElementById("best-movie-summary");
-    titelTag.textContent = movie.title;
-    imageTag.src = movie.image_url;
-    summaryTag.textContent = movie.long_description
-}
-
 function createDetailButton(value) {
     const detailButton = document.createElement("button");
+
     detailButton.textContent = "Details";
     detailButton.value = value;
     detailButton.className = "detail-button";
@@ -22,24 +14,51 @@ export function createLiTag(value) {
 
 }
 
-export function displayMovies(itemList, elementID) {
-    const movieList = document.getElementById(elementID);
+export function createGenreOption(genre) {
+    const newOption = document.createElement("option");
+    newOption.value = genre.name;
+    newOption.textContent = genre.name;
+    return newOption;
+}
 
+export function displayBestMovie(movie) {
+    const bestMovieSection = document.getElementById("best-movie-section");
+    const titelTag = document.getElementById("best-movie-title");
+    const imageTag = document.getElementById("best-movie-image");
+    const summaryTag = document.getElementById("best-movie-summary");
+    const detailButton = createDetailButton(movie.id);
+
+    titelTag.textContent = movie.title;
+    imageTag.src = movie.image_url;
+    summaryTag.textContent = movie.long_description
+    bestMovieSection.appendChild(detailButton);
+}
+
+
+
+export function displayMovies(itemList, element) {
     for (const item of itemList) {
         const title = createLiTag(item.title);
         const detailButton = createDetailButton(item.id);
         title.appendChild(detailButton);
-        movieList.appendChild(title);
+        element.appendChild(title);
     }
 
 }
 
-export function resetOtherMovies() {
-    const otherGenreMovies = document.getElementById("best-others-movies");
-    otherGenreMovies.replaceChildren();
+
+
+export function displayOtherGenres(genres) {
+    const otherGenresSelector = document.getElementById("other-genres");
+    for (const genre of genres) {
+        const genreOption = createGenreOption(genre);
+        otherGenresSelector.appendChild(genreOption);
+    }
 }
 
+
 export function displayOtherGenreMovies(otherGenreMovies) {
-    resetOtherMovies();
-    displayMovies(otherGenreMovies, "best-others-movies");
+    const bestOtherMoviesElement = document.getElementById("best-others-movies");
+    bestOtherMoviesElement.replaceChildren();;
+    displayMovies(otherGenreMovies, bestOtherMoviesElement);
 }

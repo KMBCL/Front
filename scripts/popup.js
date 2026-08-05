@@ -2,7 +2,8 @@ import { createLiTag } from "./display.js"
 
 export async function popMovieDetail(movieDetails) {
     const popup = document.getElementById("detail-popup")
-    const popupDetails = document.getElementById("movie-details");
+    const popupDetailsElement = document.getElementById("movie-details");
+    popupDetailsElement.replaceChildren()
     const detailItems = [
         createLiTag(movieDetails.title),
         createLiTag(movieDetails.genres),
@@ -18,7 +19,7 @@ export async function popMovieDetail(movieDetails) {
     ];
 
     for (const item of detailItems) {
-        popupDetails.appendChild(item);
+        popupDetailsElement.appendChild(item);
     }
     popup.showModal();
 
