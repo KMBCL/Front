@@ -25,14 +25,3 @@ export async function popMovieDetail(movieDetails) {
 
 }
 
-// const title = createLiTag(movieDetails.title);
-//     const genres = createLiTag(movieDetails.genres);
-//     const datePublished = createLiTag(movieDetails.date_published)
-//     const rated = createLiTag(movieDetails.rated);
-//     const imdbScore = createLiTag(movieDetails.imdb_score);
-//     const director = createLiTag("réalisateur ??");
-//     const actors = createLiTag(movieDetails.actors);
-//     const duration = createLiTag(movieDetails.duration);
-//     const country = createLiTag(movieDetails.countries);
-//     const income = createLiTag("income");
-//     const longDescription = createLiTag(movieDetails.long_description);

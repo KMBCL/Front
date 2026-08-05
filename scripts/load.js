@@ -1,27 +1,30 @@
-import { fetchBestMovie, fetchMovieDetail, fetchBestHorrorMovies, fetchBestActionMovies, fetchGenres } from "./movieFetch.js";
+import { fetchBestMovies, fetchMovieDetail, fetchGenreBestMovies, fetchGenres } from "./movieFetch.js";
 import { displayBestMovie, displayMovies, displayOtherGenres } from "./display.js";
 import { setSelectListener, setDetailButtonListener } from "./event.js";
 import { popMovieDetail } from "./popup.js";
 import { selectOtherGenreMovies, summonDetailPopup } from "./action.js";
 
+
 async function load() {
 
-
-    const bestMoviePromise = fetchBestMovie();
-    const bestHorrorMoviesPromise = fetchBestHorrorMovies();
-    const bestActionMoviesPromise = fetchBestActionMovies();
+    const bestMoviesPromise = fetchBestMovies();
+    const bestHorrorMoviesPromise = fetchGenreBestMovies("Horror");
+    const bestActionMoviesPromise = fetchGenreBestMovies("Action");
     const genresPromise = fetchGenres();
 
+    const bestMovies = await bestMoviesPromise;
     const bestHorrorMovies = await bestHorrorMoviesPromise;
     const bestActionMovies = await bestActionMoviesPromise;
     const genres = await genresPromise;
-    const bestMovie = await bestMoviePromise;
-    const bestMovieDetail = await fetchMovieDetail(bestMovie[0].id);
-    displayBestMovie(bestMovieDetail);
+
+    const bestMoviesDetail = await fetchMovieDetail(bestMovies.slice(0, 1)[0].id);
+    displayBestMovie(bestMoviesDetail);
     displayOtherGenres(genres);
 
+    const bestMoviesElement = document.getElementById("best-movies");
     const bestHorrorMoviesElement = document.getElementById("best-horror-movies");
     const bestActionMoviesElement = document.getElementById("best-action-movies");
+    displayMovies(bestMovies.slice(1), bestMoviesElement);
     displayMovies(bestHorrorMovies, bestHorrorMoviesElement);
     displayMovies(bestActionMovies, bestActionMoviesElement);
 

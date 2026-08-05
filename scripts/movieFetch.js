@@ -1,15 +1,40 @@
-async function fetchMovies(url, maxItem = 0) {
-    // main fetch function.
+function pageSizedUrl(url, pageSize) {
+    // completes url with page_size parameters
 
-    // api returns 5 items per fetch. dont know if that is an accessible parameter to cap fetches.
+    // api returns batch sized result
+
+    // args :
+    // url : str - full url
+    // pageSize : int - api batch count.
+
+    // return new pageSized url
+
+    if (pageSize === 0) {
+        return url;
+    } else {
+        const pageSizeParam = "page_size=";
+        const separator = (
+            url.includes("?") ?
+                "&" :
+                "?"
+        );
+        return url + separator + pageSizeParam + pageSize;
+    }
+}
+
+async function fetchMovies(url, maxItem = 0, pageSize = 0) {
+    // fetch movies function from API.
 
     // args : 
     // url : str - full url with filters and sorting
-    // maxitem : int - used to slice results. 0 means all results.
+    // maxItem : int - used to slice results. 0 means all results.
+    // pageSize : int - used for api fecth batch. 
 
     // return : array of movies
     const itemData = [];
-    let currentUrl = url;
+
+    let currentUrl = pageSizedUrl(url, pageSize);
+
     try {
         while (true) {
             const itemResponse = await fetch(currentUrl);
@@ -47,28 +72,23 @@ export async function fetchMovieDetail(movieID) {
     return movie
 }
 
-export async function fetchBestMovie() {
-    const bestMovieURL = "http://localhost:8000/api/v1/titles/?sort_by=-imdb_score";
-    return fetchMovies(bestMovieURL, 1);
+
+export async function fetchBestMovies() {
+    const bestMovieURL = "http://localhost:8000/api/v1/titles/?sort_by=-imdb_score,-votes";
+    return fetchMovies(bestMovieURL, 7, 7);
 }
 
 export async function fetchGenres() {
     const genresUrl = "http://localhost:8000/api/v1/genres/";
-    return fetchMovies(genresUrl);
+    return fetchMovies(genresUrl, 0, 25);
 }
 
 export async function fetchGenreBestMovies(genre) {
     const bestMovieURL = `http://localhost:8000/api/v1/titles/?genre=${genre}&sort_by=-imdb_score`;
-    return fetchMovies(bestMovieURL, 6);
+    return fetchMovies(bestMovieURL, 6, 6);
 }
 
-export async function fetchBestHorrorMovies() {
-    return fetchGenreBestMovies("Horror");
-}
 
-export async function fetchBestActionMovies() {
-    return fetchGenreBestMovies("Action");
-}
 
 
 

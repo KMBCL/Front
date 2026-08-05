@@ -7,6 +7,25 @@ function createDetailButton(value) {
     return detailButton;
 }
 
+function createImageTag(value) {
+    const newImageTag = document.createElement("img");
+    newImageTag.src = "";
+    newImageTag.alt = "Movie IMG";
+    return newImageTag;
+}
+
+function createTitleTag(value) {
+    const newtTitleTag = document.createElement("h3");
+    newtTitleTag.textContent = value;
+    return newtTitleTag;
+}
+
+function createShortDescription(value) {
+    const newParagraph = document.createElement("p");
+    newParagraph.textContent = value;
+    return newParagraph;
+}
+
 export function createLiTag(value) {
     const newLiTag = document.createElement("li");
     newLiTag.textContent = value;
@@ -23,30 +42,29 @@ export function createGenreOption(genre) {
 
 export function displayBestMovie(movie) {
     const bestMovieSection = document.getElementById("best-movie-section");
-    const titelTag = document.getElementById("best-movie-title");
-    const imageTag = document.getElementById("best-movie-image");
-    const summaryTag = document.getElementById("best-movie-summary");
+    const imageTag = createImageTag(movie.image_url);
+    const titleTag = createTitleTag(movie.title)
     const detailButton = createDetailButton(movie.id);
+    const shortDescription = createShortDescription(movie.description);
 
-    titelTag.textContent = movie.title;
-    imageTag.src = movie.image_url;
-    summaryTag.textContent = movie.long_description
+    bestMovieSection.appendChild(imageTag);
+    bestMovieSection.appendChild(titleTag);
     bestMovieSection.appendChild(detailButton);
+    bestMovieSection.appendChild(shortDescription);
 }
-
-
 
 export function displayMovies(itemList, element) {
     for (const item of itemList) {
+        const imageTag = createImageTag(item.image_url);
         const title = createLiTag(item.title);
         const detailButton = createDetailButton(item.id);
+
+        title.appendChild(imageTag);
         title.appendChild(detailButton);
         element.appendChild(title);
     }
 
 }
-
-
 
 export function displayOtherGenres(genres) {
     const otherGenresSelector = document.getElementById("other-genres");
@@ -55,7 +73,6 @@ export function displayOtherGenres(genres) {
         otherGenresSelector.appendChild(genreOption);
     }
 }
-
 
 export function displayOtherGenreMovies(otherGenreMovies) {
     const bestOtherMoviesElement = document.getElementById("best-others-movies");
