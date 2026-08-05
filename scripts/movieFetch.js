@@ -63,13 +63,11 @@ export async function fetchGenreBestMovies(genre) {
 }
 
 export async function fetchBestHorrorMovies() {
-    const bestMovieURL = fetchGenreBestMovies("Horror");
-    return fetchMovies(bestMovieURL, 6);
+    return fetchGenreBestMovies("Horror");
 }
 
 export async function fetchBestActionMovies() {
-    const bestMovieURL = fetchGenreBestMovies("Action");
-    return fetchMovies(bestMovieURL, 6);
+    return fetchGenreBestMovies("Action");
 }
 
 

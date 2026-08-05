@@ -7,14 +7,29 @@ export function displayBestMovie(movie, elementID) {
     summaryTag.textContent = movie.long_description
 }
 
+function createDetailButton(value) {
+    const detailButton = document.createElement("button");
+    detailButton.textContent = "Details";
+    detailButton.value = value;
+    detailButton.className = "detail-button";
+    return detailButton;
+}
+
+export function createLiTag(value) {
+    const newLiTag = document.createElement("li");
+    newLiTag.textContent = value;
+    return newLiTag;
+
+}
+
 export function displayMovies(itemList, elementID) {
-    const listTag = document.getElementById(elementID);
-    console.log(itemList);
+    const movieList = document.getElementById(elementID);
 
     for (const item of itemList) {
-        const newLiTag = document.createElement("li");
-        newLiTag.textContent = item.title;
-        listTag.appendChild(newLiTag);
+        const title = createLiTag(item.title);
+        const detailButton = createDetailButton(item.id);
+        title.appendChild(detailButton);
+        movieList.appendChild(title);
     }
 
 }
