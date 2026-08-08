@@ -49,9 +49,7 @@ export function createGenreOption(genre) {
     return newOption;
 }
 
-export function displayBestMovie(movie) {
-    const bestMovieSection = document.getElementById("best-movie-section");
-
+export function displayBestMovie(movie, element) {
     const movieImageContainer = document.createElement("div");
     const movieDetailsContainer = document.createElement("div");
     movieImageContainer.className = "best-movie-image-container";
@@ -68,8 +66,8 @@ export function displayBestMovie(movie) {
     movieDetailsContainer.appendChild(shortDescription);
     movieDetailsContainer.appendChild(detailButton);
 
-    bestMovieSection.appendChild(movieImageContainer);
-    bestMovieSection.appendChild(movieDetailsContainer);
+    element.appendChild(movieImageContainer);
+    element.appendChild(movieDetailsContainer);
 }
 
 export function displayMovies(itemList, element) {
