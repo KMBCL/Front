@@ -1,8 +1,8 @@
 import { fetchBestMovies, fetchMovieDetail, fetchGenreBestMovies, fetchGenres } from "./movieFetch.js";
 import { displayBestMovie, displayMovies, displayOtherGenres } from "./display.js";
-import { setSelectListener, setDetailButtonListener } from "./event.js";
+import { setSelectListener, setSummonDetailButtonListener, setCloseDetailPopupListener } from "./event.js";
 import { popMovieDetail } from "./popup.js";
-import { selectOtherGenreMovies, summonDetailPopup } from "./action.js";
+import { selectOtherGenreMovies, summonDetailPopup, closeDetailPopup } from "./action.js";
 
 
 async function load() {
@@ -12,6 +12,7 @@ async function load() {
     const bestHorrorMoviesElement = document.getElementById("best-horror-movies");
     const bestActionMoviesElement = document.getElementById("best-action-movies");
     const bestOtherMoviesElement = document.getElementById("best-others-movies");
+    const closePopupElement = document.getElementById("close-popup");
 
     const bestMoviesPromise = fetchBestMovies();
     const bestHorrorMoviesPromise = fetchGenreBestMovies("Horror");
@@ -24,20 +25,24 @@ async function load() {
     const genres = await genresPromise;
 
     const bestMoviesDetail = await fetchMovieDetail(bestMovies.slice(0, 1)[0].id);
+
     displayBestMovie(bestMoviesDetail, bestMovieElement);
     displayOtherGenres(genres);
-
 
     displayMovies(bestMovies.slice(1), bestMoviesElement);
     displayMovies(bestHorrorMovies, bestHorrorMoviesElement);
     displayMovies(bestActionMovies, bestActionMoviesElement);
 
+
+
+    setSummonDetailButtonListener(summonDetailPopup, bestMovieElement);
+    setSummonDetailButtonListener(summonDetailPopup, bestMoviesElement);
+    setSummonDetailButtonListener(summonDetailPopup, bestHorrorMoviesElement);
+    setSummonDetailButtonListener(summonDetailPopup, bestActionMoviesElement);
+    setSummonDetailButtonListener(summonDetailPopup, bestOtherMoviesElement);
+
     setSelectListener(selectOtherGenreMovies);
-    setDetailButtonListener(summonDetailPopup, bestMovieElement);
-    setDetailButtonListener(summonDetailPopup, bestMoviesElement);
-    setDetailButtonListener(summonDetailPopup, bestHorrorMoviesElement);
-    setDetailButtonListener(summonDetailPopup, bestActionMoviesElement);
-    setDetailButtonListener(summonDetailPopup, bestOtherMoviesElement);
+    setCloseDetailPopupListener(closeDetailPopup, closePopupElement);
     console.log("loaded")
 }
 

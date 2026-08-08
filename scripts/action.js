@@ -9,8 +9,12 @@ export async function selectOtherGenreMovies(Event) {
 }
 
 export async function summonDetailPopup(Event) {
-    console.log("detailButton value", Event.target.value);
     const detailButton = Event.target;
     const movieDetails = await fetchMovieDetail(detailButton.value);
     popMovieDetail(movieDetails);
+}
+
+export function closeDetailPopup(Event) {
+    const detailPopup = document.getElementById("detail-popup");
+    detailPopup.close();
 }

@@ -3,9 +3,11 @@ export function setSelectListener(selectOtherGenreMovies) {
     selectOtherGenre.addEventListener("change", selectOtherGenreMovies);
 }
 
-export function setDetailButtonListener(summonDetailPopup, element) {
+export function setSummonDetailButtonListener(summonDetailPopup, element) {
     element.addEventListener("click", summonDetailPopup);
 }
 
 
-
+export function setCloseDetailPopupListener(closeDetailPopup, element) {
+    element.addEventListener("click", closeDetailPopup);
+}
