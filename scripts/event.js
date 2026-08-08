@@ -3,12 +3,8 @@ export function setSelectListener(selectOtherGenreMovies) {
     selectOtherGenre.addEventListener("change", selectOtherGenreMovies);
 }
 
-export function setDetailButtonListener(summonDetailPopup) {
-    const detailButtons = document.getElementsByClassName("detail-button")
-
-    for (const detailButton of detailButtons) {
-        detailButton.addEventListener("click", summonDetailPopup);
-    }
+export function setDetailButtonListener(summonDetailPopup, element) {
+    element.addEventListener("click", summonDetailPopup);
 }
 
 

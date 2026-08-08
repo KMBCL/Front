@@ -1,3 +1,13 @@
+body {
+    display: grid;
+}
+
+.main-container {
+    margin: 5rem;
+    width: 993px;
+    justify-self: center;
+}
+
 .header-container {
     border-style: solid;
     border-width: 1px;
@@ -17,17 +27,34 @@
 
 
 .best-movie-container {
+    display: flex;
     border-style: solid;
     border-width: 1px;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.best-movie-image-container {
+    width: 20rem;
+}
+
+.best-movie-details-container {
+    display: grid;
+}
+
+.best-movie-details-container .detail-button {
+    justify-self: end;
+    width: 5rem;
+    height: 2.5rem;
+
+    border-radius: 1rem;
 }
 
 .movie-container {
     display: flex;
     flex-wrap: wrap;
-
     list-style: none;
     padding: 0;
-
     gap: 1rem;
 }
 
@@ -54,14 +81,32 @@
 
     height: 30%;
     width: 100%;
-    background-color: brown;
+
 
     padding: 1rem;
 }
 
-.movie-item-detail-button {
+.movie-item .detail-button {
     width: 50%;
     justify-self: end;
 
     border-radius: 1rem;
+}
+
+
+
+.popup-header {
+    display: grid;
+    grid-template-columns: 1fr 10rem;
+    background-color: brown;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+
+
+.popup-poster-container {
+    background-color: rgb(72, 22, 119);
+    width: 10rem;
+    justify-self: end;
 }

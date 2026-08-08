@@ -24,12 +24,16 @@ async function load() {
     const bestMoviesElement = document.getElementById("best-movies");
     const bestHorrorMoviesElement = document.getElementById("best-horror-movies");
     const bestActionMoviesElement = document.getElementById("best-action-movies");
+    const bestOtherMoviesElement = document.getElementById("best-others-movies");
     displayMovies(bestMovies.slice(1), bestMoviesElement);
     displayMovies(bestHorrorMovies, bestHorrorMoviesElement);
     displayMovies(bestActionMovies, bestActionMoviesElement);
 
     setSelectListener(selectOtherGenreMovies);
-    setDetailButtonListener(summonDetailPopup);
+    setDetailButtonListener(summonDetailPopup, bestMoviesElement);
+    setDetailButtonListener(summonDetailPopup, bestHorrorMoviesElement);
+    setDetailButtonListener(summonDetailPopup, bestActionMoviesElement);
+    setDetailButtonListener(summonDetailPopup, bestOtherMoviesElement);
     console.log("loaded")
 }
 

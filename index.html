@@ -6,67 +6,90 @@
         <link rel="stylesheet" href="static/style.css">
         <title>JustStreamIt</title>
 
-        <script type="module" src="scripts/load.js" defer> </script>
+        <script type="module" src="scripts/load.js"> </script>
     </head>
 
     <body>
-        <header>
-            <div class="header-container">
-                <!--<img class="jsi-logo" src="static/img/JSI-transparent-512.png">
-                <div class="header-title">Vidéo à la demande</div>-->
-            </div>
-        </header>
-
-        <main>
-            
-            <section class="movie-section" >
-                <h2>Meilleur film :</h2>
-                <div class="best-movie-container" id="best-movie-section">
-                    <!-- feeded -->
+        <div class="main-container">
+            <header>
+                <div class="header-container">
+                    <img class="jsi-logo" src="static/img/JSI-transparent-512.png" alt="">
+                    <h1>Vidéo à la demande</h1>
                 </div>
-            </section>
+            </header>
 
-            <section class="movie-section">
-                <h2>Best movies</h2>
-                <ul class="movie-container" id="best-movies">
-                    <!-- feeded -->
-                </ul>
-            </section>
+            <main>
+                
+                <section class="movie-section" >
+                    <h2>Best Movie ever :</h2>
+                    <div class="best-movie-container" id="best-movie-section">
+                        <!-- feeded -->
+                    </div>
+                </section>
 
-            <section class="movie-section">
-                <h2>Best Horror</h2>
-                <ul class="movie-container" id="best-horror-movies">
-                    <!-- feeded -->
-                </ul>
-            </section>
+                <section class="movie-section">
+                    <h2>Best movies</h2>
+                    <ul class="movie-container" id="best-movies">
+                        <!-- feeded -->
+                    </ul>
+                </section>
 
-            <section class="movie-section">
-                <h2>Best Action</h2>
-                <ul class="movie-container" id="best-action-movies">
-                    <!-- feeded -->
-                </ul>
-            </section>
+                <section class="movie-section">
+                    <h2>Best Horror</h2>
+                    <ul class="movie-container" id="best-horror-movies">
+                        <!-- feeded -->
+                    </ul>
+                </section>
 
-            <section class="movie-section">
-                <h2>Others</h2>
-                <select id="other-genres"><label>Genres</label>
-                    <!-- feeded -->
-                </select>
-                <ul class="movie-container" id="best-others-movies">
-                    <!-- feeded -->
-                </ul>
-            </section>
+                <section class="movie-section">
+                    <h2>Best Action</h2>
+                    <ul class="movie-container" id="best-action-movies">
+                        <!-- feeded -->
+                    </ul>
+                </section>
 
-            <dialog id="detail-popup">
-                <ul id="movie-details">
-                    <!-- feeded -->
-                </ul>
-            </dialog>
+                <section class="movie-section">
+                    <h2>Others</h2>
+                    <label for="other-genres">Genres</label>
+                    <select id="other-genres">
+                        <!-- feeded -->
+                    </select>
+                    <ul class="movie-container" id="best-others-movies">
+                        <!-- feeded -->
+                    </ul>
+                </section>
+  
+            </main>
 
-            
-            
-        </main>
+            <footer>Author : KMB</footer>
+        </div>
 
-        <footer>Author : KMB</footer>
+        <dialog id="detail-popup" class="detail-popup">
+            <div class="popup-container">
+                <div class="popup-header">                    
+                    <div class="popup-detail-container">
+                        <h2 id="popup-movie-title"></h2>
+                            <ul>
+                                <li id="popup-year-genres"></li>
+                                <li id="popup-rated-duration"></li>
+                                <li id="popup-imdb-score"></li>
+                                <li id="popup-income"></li>
+                            </ul>
+                        <h3>Directed by</h3>
+                            <p id="popup-directors"></p>
+                    </div>
+                    <div class="popup-poster-container">
+                        <img id="popup-poster" src="" alt="" class="movie-poster">
+                    </div>
+                </div>
+                <div class="popup-body">
+                    <p id="popup-long-description"></p>
+
+                    Avec:
+                    <p id="popup-actors"></p>
+                    <button class="close-popup">Close</button>
+                </div>
+            </div>
+        </dialog>
     </body>    
 </html>
