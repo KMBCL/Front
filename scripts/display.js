@@ -9,7 +9,7 @@ function createDetailButton(value) {
 
 function createImageTag(value) {
     const imageTag = document.createElement("img");
-    imageTag.src = "";
+    imageTag.src = value;
     imageTag.alt = "Movie IMG";
     imageTag.className = "movie-poster";
     return imageTag;
