@@ -1,4 +1,4 @@
-import { fetchGenreBestMovies, fetchMovieDetail } from "./movieFetch.js";
+import { fetchGenreBestMovies, fetchMovieDetail } from "./apiFetch.js";
 import { displayOtherGenreMovies } from "./display.js";
 import { popMovieDetail } from "./popup.js";
 

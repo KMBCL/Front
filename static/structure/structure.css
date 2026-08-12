@@ -10,8 +10,6 @@ body {
     margin: 5rem;
     max-width: var(--desktop-UI-width);
     justify-self: center;
-
-
 }
 
 .header-container {

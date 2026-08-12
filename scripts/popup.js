@@ -3,7 +3,7 @@ import { createLiTag } from "./display.js"
 export async function popMovieDetail(movieDetails) {
     const popup = document.getElementById("detail-popup");
     const movieTitleTag = document.getElementById("popup-movie-title");
-
+    const moviePoster = document.getElementById("popup-poster");
     const movieLongDescriptionTag = document.getElementById("popup-long-description");
     const movieActorsTag = document.getElementById("popup-actors");
     const movieYearGenresTag = document.getElementById("popup-year-genres");
@@ -15,6 +15,8 @@ export async function popMovieDetail(movieDetails) {
 
 
     movieTitleTag.textContent = movieDetails.title;
+    moviePoster.src = movieDetails.image_url;
+    moviePoster.alt = "IMG"
     movieLongDescriptionTag.textContent = movieDetails.long_description;
     movieActorsTag.textContent = movieDetails.actors;
     movieYearGenresTag.textContent = movieDetails.year + " - " + movieDetails.genres;
