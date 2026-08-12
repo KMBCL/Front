@@ -10,7 +10,7 @@ function createDetailButton(value) {
 function createImageTag(value) {
     const imageTag = document.createElement("img");
     imageTag.src = value;
-    imageTag.alt = "Movie IMG";
+    imageTag.alt = "Movie Poster";
     imageTag.className = "movie-poster";
     return imageTag;
 }
@@ -50,24 +50,13 @@ export function createGenreOption(genre) {
 }
 
 export function displayBestMovie(movie, element) {
-    const movieImageContainer = document.createElement("div");
-    const movieDetailsContainer = document.createElement("div");
-    movieImageContainer.className = "best-movie-image-container";
-    movieDetailsContainer.className = "best-movie-details-container";
+    const imageTag = document.getElementById("best-movie-poster");
+    const titleTag = document.getElementById("best-movie-title");
+    const shortDescription = document.getElementById("best-movie-description");
 
-    const imageTag = createImageTag(movie.image_url);
-    const titleTag = createTitleTag(movie.title);
-    const detailButton = createDetailButton(movie.id);
-    const shortDescription = createShortDescription(movie.description);
-
-    movieImageContainer.appendChild(imageTag)
-
-    movieDetailsContainer.appendChild(titleTag);
-    movieDetailsContainer.appendChild(shortDescription);
-    movieDetailsContainer.appendChild(detailButton);
-
-    element.appendChild(movieImageContainer);
-    element.appendChild(movieDetailsContainer);
+    imageTag.src = movie.image_url;
+    titleTag.textContent = movie.title;
+    shortDescription.textContent = movie.description;
 }
 
 export function displayMovies(itemList, element) {

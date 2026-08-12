@@ -1,5 +1,6 @@
 @import url("structure/structure.css");
 @import url("theme/theme.css");
+@import url("bestMovie.css");
 
 * {
     box-sizing: border-box;

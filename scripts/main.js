@@ -7,11 +7,12 @@ import { popMovieDetail, setSummonDetailButtonListener, setCloseDetailPopupListe
 
 async function main() {
 
-    const bestMovieElement = document.getElementById("best-movie");
+
     const bestMoviesElement = document.getElementById("best-movies");
     const bestHorrorMoviesElement = document.getElementById("best-horror-movies");
     const bestActionMoviesElement = document.getElementById("best-action-movies");
     const bestOtherMoviesElement = document.getElementById("best-others-movies");
+    const bestMovieDetailButton = document.getElementById("best-movie-detail");
     const closePopupElement = document.getElementById("close-popup");
 
     const bestMoviesPromise = fetchBestMovies();
@@ -26,7 +27,7 @@ async function main() {
 
     const bestMoviesDetail = await fetchMovieDetail(bestMovies.slice(0, 1)[0].id);
 
-    displayBestMovie(bestMoviesDetail, bestMovieElement);
+    displayBestMovie(bestMoviesDetail);
     displayOtherGenres(genres);
 
     displayMovies(bestMovies.slice(1), bestMoviesElement);
@@ -35,7 +36,7 @@ async function main() {
 
 
 
-    setSummonDetailButtonListener(bestMovieElement);
+    setSummonDetailButtonListener(bestMovieDetailButton);
     setSummonDetailButtonListener(bestMoviesElement);
     setSummonDetailButtonListener(bestHorrorMoviesElement);
     setSummonDetailButtonListener(bestActionMoviesElement);

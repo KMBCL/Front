@@ -1,5 +1,5 @@
 :root {
-    --desktop-UI-width: 993px;
+    --desktop-UI-width: 62rem;
 }
 
 body {
@@ -27,33 +27,6 @@ body {
 
 .header-title {
     font-size: 5rem;
-}
-
-
-.best-movie-container {
-    display: flex;
-    flex-wrap: wrap;
-    border-style: solid;
-    border-width: 1px;
-    padding: 1rem;
-    gap: 1rem;
-}
-
-.best-movie-image-container {
-    width: 20rem;
-}
-
-.best-movie-details-container {
-    display: grid;
-    min-width: 10rem;
-}
-
-.best-movie-details-container .detail-button {
-    justify-self: end;
-    width: 5rem;
-    height: 2.5rem;
-
-    border-radius: 1rem;
 }
 
 .movie-container {
