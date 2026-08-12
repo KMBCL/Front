@@ -1,4 +1,25 @@
 import { createLiTag } from "./display.js"
+import { fetchMovieDetail } from "./apiFetch.js";
+
+export async function summonDetailPopup(Event) {
+    const detailButton = Event.target;
+    const movieDetails = await fetchMovieDetail(detailButton.value);
+    popMovieDetail(movieDetails);
+}
+
+export function closeDetailPopup(Event) {
+    const detailPopup = document.getElementById("detail-popup");
+    detailPopup.close();
+}
+
+export function setSummonDetailButtonListener(element) {
+    element.addEventListener("click", summonDetailPopup);
+}
+
+
+export function setCloseDetailPopupListener(element) {
+    element.addEventListener("click", closeDetailPopup);
+}
 
 export async function popMovieDetail(movieDetails) {
     const popup = document.getElementById("detail-popup");
