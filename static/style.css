@@ -1,6 +1,8 @@
-@import url("structure/structure.css");
-@import url("theme/theme.css");
+@import url("main.css");
+
+@import url("bestMovies.css");
 @import url("bestMovie.css");
+@import url("popup.css");
 
 * {
     box-sizing: border-box;

@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="static/style.css">
         <title>JustStreamIt</title>
 
@@ -15,13 +15,13 @@
                 <!-- nav en devenir: menu burger -->
                 <div class="header-container">
                     <img class="jsi-logo" src="static/img/JSI-transparent-512.png" alt="">
-                    <h1>Vidéo à la demande</h1>
+                    <!-- <h1>Vidéo à la demande</h1> -->
                 </div>
             </header>
 
             <main>
                 
-                <section class="movie-section" >
+                <section class="best-movie-section" >
                     <!-- revoir classe section -->
                     <h2>Best Movie ever :</h2>
                     <div class="best-movie-container" id="best-movie">
@@ -39,21 +39,21 @@
 
                 <section class="movie-section">
                     <h2>Best movies</h2>
-                    <ul class="movie-container" id="best-movies">
+                    <ul class="movies-container" id="best-movies">
                         <!-- feeded -->
                     </ul>
                 </section>
 
                 <section class="movie-section">
                     <h2>Best Horror</h2>
-                    <ul class="movie-container" id="best-horror-movies">
+                    <ul class="movies-container" id="best-horror-movies">
                         <!-- feeded -->
                     </ul>
                 </section>
 
-                <section class="movie-section">
+                <section class="movies-section">
                     <h2>Best Action</h2>
-                    <ul class="movie-container" id="best-action-movies">
+                    <ul class="movies-container" id="best-action-movies">
                         <!-- feeded -->
                     </ul>
                 </section>
@@ -64,7 +64,7 @@
                     <select id="other-genres">
                         <!-- feeded -->
                     </select>
-                    <ul class="movie-container" id="best-others-movies">
+                    <ul class="movies-container" id="best-others-movies">
                         <!-- feeded -->
                     </ul>
                 </section>
@@ -76,28 +76,30 @@
 
         <dialog id="detail-popup" class="detail-popup">
             <div class="popup-container">
+                <button id="close-popup">Close</button>
                 <div class="popup-header">                    
                     <div class="popup-detail-container">
                         <h2 id="popup-movie-title"></h2>
-                            <ul>
+                            <ul class="popup-movie-details">
                                 <li id="popup-year-genres"></li>
                                 <li id="popup-rated-duration"></li>
                                 <li id="popup-imdb-score"></li>
                                 <li id="popup-income"></li>
                             </ul>
-                        <h3>Directed by</h3>
-                            <p id="popup-directors"></p>
-                    </div>
-                    <div class="popup-poster-container">
-                        <img id="popup-poster" src="" alt="" class="movie-poster">
-                    </div>
+                        <h3>Directed by : 
+                        </h3>
+                        <p id="popup-directors"></p>
+                    </div>                    
                 </div>
                 <div class="popup-body">
-                    <p id="popup-long-description"></p>
-
+                    <p id="popup-long-description"></p>                    
+                </div>
+                <div class="popup-poster-container">
+                    <img id="popup-poster" src="" alt="" class="movie-poster">
+                </div>
+                <div>
                     Avec:
                     <p id="popup-actors"></p>
-                    <button id="close-popup">Close</button>
                 </div>
             </div>
         </dialog>

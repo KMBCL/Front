@@ -1,0 +1,42 @@
+.movie-section {
+    background-color: darkgreen;
+}
+
+.movies-container {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 25rem));
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.movie-item {
+    display: grid;
+    max-width: 25rem;
+    background-color: darkslategrey;
+}
+
+.movie-poster {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 182/268;
+
+    background-color: blueviolet;
+}
+
+.movie-banner {
+    display: grid;
+}
+
+.movie-item__title {
+    justify-self: self-start;
+}
+
+.movie-item__detail-button {
+    justify-self: self-end;
+
+    width: 5rem;
+
+    background-color: crimson;
+    border-radius: 1rem;
+}

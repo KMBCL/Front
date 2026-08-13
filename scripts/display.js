@@ -3,7 +3,7 @@ function createDetailButton(value) {
 
     detailButton.textContent = "Details";
     detailButton.value = value;
-    detailButton.className = "detail-button";
+    detailButton.className = "movie-item__detail-button";
     return detailButton;
 }
 
@@ -17,6 +17,7 @@ function createImageTag(value) {
 
 function createTitleTag(value) {
     const titleTag = document.createElement("h3");
+    titleTag.className = "movie-item__title"
     titleTag.textContent = value;
     return titleTag;
 }
