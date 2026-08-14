@@ -1,8 +1,10 @@
 .movie-section {
+
     background-color: darkgreen;
 }
 
 .movies-container {
+    container-type: inline-size;
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(auto-fit, minmax(15rem, 25rem));

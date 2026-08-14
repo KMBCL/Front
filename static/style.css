@@ -3,6 +3,7 @@
 @import url("bestMovies.css");
 @import url("bestMovie.css");
 @import url("popup.css");
+@import url("breakpoint.css");
 
 * {
     box-sizing: border-box;

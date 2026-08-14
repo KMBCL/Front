@@ -2,7 +2,7 @@ import { fetchBestMovies, fetchMovieDetail, fetchGenreBestMovies, fetchGenres } 
 import { displayBestMovie, displayMovies, displayOtherGenres } from "./display.js";
 import { setSelectListener } from "./otherGenres.js";
 import { popMovieDetail, setSummonDetailButtonListener, setCloseDetailPopupListener } from "./popup.js";
-
+import { setShorMoreListeners } from "./showMore.js";
 
 
 async function main() {
@@ -44,7 +44,9 @@ async function main() {
 
     setSelectListener();
     setCloseDetailPopupListener(closePopupElement);
-    console.log("loaded")
+
+    setShorMoreListeners();
+    console.log("loaded");
 }
 
-main()
+main();
