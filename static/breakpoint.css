@@ -1,4 +1,8 @@
 @container (width<49rem) {
+    .best-movie-ever-title {
+        text-align: center;
+    }
+
     .movie-section:has(.show-more[aria-expanded="false"]) {
         .movie-item:nth-child(n+3) {
             display: none;
@@ -10,10 +14,6 @@
             display: none;
         }
     }
-
-    /* .best-movie-section {
-        justify-content: center;
-    } */
 }
 
 @container (69rem>width>=49rem) {
@@ -45,7 +45,3 @@
     }
 
 }
-
-/* @container (min-width: 69rem) {
-    
-} */

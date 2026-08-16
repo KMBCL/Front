@@ -1,7 +1,5 @@
 .best-movie-section {
-    container-type: inline-size;
     padding: 1rem;
-
     border-style: solid;
     border-width: 0.2rem;
     border-color: black;

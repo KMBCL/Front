@@ -22,6 +22,7 @@ ul {
 
 
 main {
+    container-type: inline-size;
     padding: 1rem;
 }
 
