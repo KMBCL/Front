@@ -1,5 +1,5 @@
 .best-movie-section {
-
+    container-type: inline-size;
     padding: 1rem;
 
     border-style: solid;
@@ -8,7 +8,7 @@
 }
 
 .best-movie-container {
-    container-type: inline-size;
+
     display: grid;
     grid-template-columns: 1fr;
 

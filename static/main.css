@@ -1,6 +1,16 @@
 body {
     margin: 0;
-    background-color: crimson;
+}
+
+nav {
+    display: grid;
+
+    border-style: solid;
+    border-width: 0.1rem;
+    border-color: black;
+
+    margin: 1rem;
+    justify-content: center;
 }
 
 ul {
@@ -9,16 +19,10 @@ ul {
     margin: 0;
 }
 
-.main-container {
-    padding: 1rem;
 
-    background-color: darkkhaki;
-}
 
 main {
     padding: 1rem;
-
-    background-color: darkgoldenrod;
 }
 
 
