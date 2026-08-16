@@ -1,7 +1,22 @@
+@media (width<49rem) {
+    #jsi-title {
+        display: none;
+    }
+
+    .header-container {
+        justify-items: center;
+        grid-template-columns: 1fr;
+    }
+}
+
 @container (width<49rem) {
 
 
     .best-movie-ever-title {
+        text-align: center;
+    }
+
+    .category-best-movies-title {
         text-align: center;
     }
 
@@ -54,4 +69,14 @@
         grid-template-columns: 20rem 1fr;
     }
 
+    .best-movie-poster {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 182/268;
+
+    }
+
+    .best-movie-container__details-container__details-button {
+        justify-self: self-end;
+    }
 }

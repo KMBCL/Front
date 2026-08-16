@@ -5,26 +5,27 @@
     border-color: black;
 }
 
-.best-movie-container {
 
+
+.best-movie-container {
     display: grid;
     grid-template-columns: 1fr;
-
     gap: 1rem;
+
+    justify-items: center;
 }
 
 .best-movie-container__poster-container {
     display: grid;
-    max-width: 20rem;
+    width: 100%;
+    max-width: 25rem;
     background-color: darkslategrey;
 }
 
 .best-movie-container__details-container {
     display: grid;
     justify-content: center;
-
     padding: 1rem;
-
     width: 100%;
     background-color: darksalmon;
 }
@@ -33,9 +34,7 @@
     justify-self: center;
     height: 2rem;
     width: 5rem;
-
     color: white;
-
     border-style: none;
     border-radius: 1rem;
     background-color: crimson;
