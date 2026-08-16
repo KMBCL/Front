@@ -33,4 +33,10 @@
     justify-self: center;
     height: 2rem;
     width: 5rem;
+
+    color: white;
+
+    border-style: none;
+    border-radius: 1rem;
+    background-color: crimson;
 }

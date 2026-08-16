@@ -1,4 +1,6 @@
 @container (width<49rem) {
+
+
     .best-movie-ever-title {
         text-align: center;
     }
@@ -17,6 +19,14 @@
 }
 
 @container (69rem>width>=49rem) {
+    .best-movie-poster {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 182/268;
+
+        background-color: blueviolet;
+    }
+
     .best-movie-container {
         grid-template-columns: 20rem 1fr;
     }
