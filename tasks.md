@@ -9,3 +9,4 @@
 [Projet 6] README
 [Projet 6] Empaqueter les livrables
 [Projet 6] Soutenance blanche la semaine prochaine
+[Projet 6] Import des fichiers css directement dans le html.
