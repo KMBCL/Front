@@ -1,0 +1,10 @@
+.other-header{
+    display: grid;
+    justify-content: center;
+
+}
+
+#other-genres{ 
+    max-width: 18rem;
+    background-color: white;
+}

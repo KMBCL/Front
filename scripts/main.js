@@ -20,12 +20,17 @@ async function main() {
     const bestActionMoviesPromise = fetchGenreBestMovies("Action");
     const genresPromise = fetchGenres();
 
-    const bestMovies = await bestMoviesPromise;
+    
     const bestHorrorMovies = await bestHorrorMoviesPromise;
     const bestActionMovies = await bestActionMoviesPromise;
     const genres = await genresPromise;
 
+    // promise.all bestHorrorMovies bestActionMovies genres
+
+    const bestMovies = await bestMoviesPromise;
     const bestMoviesDetail = await fetchMovieDetail(bestMovies.slice(0, 1)[0].id);
+
+    // bestMovies >> bestMoviesDetail
 
     displayBestMovie(bestMoviesDetail);
     displayOtherGenres(genres);

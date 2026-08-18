@@ -6,12 +6,10 @@
 }
 
 
-
 .best-movie-container {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
-
     justify-items: center;
 }
 
@@ -19,7 +17,6 @@
     display: grid;
     width: 100%;
     max-width: 25rem;
-    background-color: darkslategrey;
 }
 
 .best-movie-container__details-container {
@@ -27,7 +24,6 @@
     justify-content: center;
     padding: 1rem;
     width: 100%;
-    background-color: darksalmon;
 }
 
 .best-movie-container__details-container__details-button {

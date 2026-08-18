@@ -1,4 +1,4 @@
-@media (width<49rem) {
+@media (width<=53rem) {
     #jsi-title {
         display: none;
     }
@@ -9,8 +9,7 @@
     }
 }
 
-@container (width<49rem) {
-
+@media (width<=53rem) {
 
     .best-movie-ever-title {
         text-align: center;
@@ -31,9 +30,11 @@
             display: none;
         }
     }
+
+    
 }
 
-@container (69rem>width>=49rem) {
+@media(80rem>=width>53rem) {
     .best-movie-poster {
         width: 100%;
         height: auto;
@@ -61,10 +62,13 @@
             display: none;
         }
     }
+    .other-header{
+        grid-template-columns: 5rem 1fr;
+    }
 
 }
 
-@container (width>69rem) {
+@media(width>80rem) {
     .best-movie-container {
         grid-template-columns: 20rem 1fr;
     }
@@ -79,4 +83,21 @@
     .best-movie-container__details-container__details-button {
         justify-self: self-end;
     }
+
+    .show-more {
+        display: none;
+    }
+
+    .other-header{
+        grid-template-columns: 5rem 1fr;
+    }
+
+    .detail-popup{
+        max-width: 40rem;
+        
+    }
+    .popup_top{
+        grid-template-columns: 1fr 15rem;
+    }
+    
 }

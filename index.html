@@ -40,7 +40,9 @@
                     <ul class="movies-container" id="best-movies">
                         <!-- feeded -->
                     </ul>
-                    <button class="show-more" aria-expanded="false" aria-controls="best-movies">Show more</button>
+                    <div class="show-more-section">
+                        <button class="show-more" aria-expanded="false" aria-controls="best-movies">Show more</button>
+                    </div>
                 </section>
 
                 <section class="movie-section">
@@ -48,7 +50,9 @@
                     <ul class="movies-container" id="best-horror-movies">
                         <!-- feeded -->
                     </ul>
-                    <button class="show-more" aria-expanded="false" aria-controls="best-horror-movies">Show more</button>
+                    <div class="show-more-section">
+                        <button class="show-more" aria-expanded="false" aria-controls="best-horror-movies">Show more</button>
+                    </div>
                 </section>
 
                 <section class="movie-section">
@@ -56,19 +60,25 @@
                     <ul class="movies-container" id="best-action-movies">
                         <!-- feeded -->
                     </ul>
-                    <button class="show-more" aria-expanded="false" aria-controls="best-action-movies">Show more</button>
+                    <div class="show-more-section">
+                        <button class="show-more" aria-expanded="false" aria-controls="best-action-movies">Show more</button>
+                    </div>
                 </section>
 
                 <section class="movie-section">
-                    <h2 class="category-best-movies-title">Others</h2>
-                    <label for="other-genres">Genres</label>
-                    <select id="other-genres">
+                    <div class="other-header">
+                        <h2 class="category-best-movies-title">Others</h2>
+                        <select id="other-genres">
                         <!-- feeded -->
-                    </select>
+                        </select>
+                    </div>
+                    
                     <ul class="movies-container" id="best-others-movies">
                         <!-- feeded -->
                     </ul>
-                    <button class="show-more" aria-expanded="false" aria-controls="best-others-movies">Show more</button>
+                    <div class="show-more-section">
+                        <button class="show-more" aria-expanded="false" aria-controls="best-others-movies">Show more</button>
+                    </div>
                 </section>
   
             </main>
@@ -79,27 +89,32 @@
         <dialog id="detail-popup" class="detail-popup">
             <div class="popup-container">
                 <button id="close-popup">Close</button>
-                <div class="popup-header">                    
-                    <div class="popup-detail-container">
-                        <h2 id="popup-movie-title"></h2>
-                            <ul class="popup-movie-details">
-                                <li id="popup-year-genres"></li>
-                                <li id="popup-rated-duration"></li>
-                                <li id="popup-imdb-score"></li>
-                                <li id="popup-income"></li>
-                            </ul>
-                        <h3>Directed by : 
-                        </h3>
-                        <p id="popup-directors"></p>
-                    </div>                    
+                <div class="popup_top">
+                    <div>
+                        <div class="popup-header">                    
+                            <div class="popup-detail-container">
+                                <h2 id="popup-movie-title"></h2>
+                                    <ul class="popup-movie-details">
+                                        <li id="popup-year-genres"></li>
+                                        <li id="popup-rated-duration"></li>
+                                        <li id="popup-imdb-score"></li>
+                                        <li id="popup-income"></li>
+                                    </ul>
+                                <h3>Directed by : 
+                                </h3>
+                                <p id="popup-directors"></p>
+                            </div>                    
+                        </div>
+                        
+                    </div>
+                    <div class="popup-poster-container">
+                        <img id="popup-poster" src="" alt="">
+                    </div>
                 </div>
-                <div class="popup-body">
-                    <p id="popup-long-description"></p>                    
-                </div>
-                <div class="popup-poster-container">
-                    <img id="popup-poster" src="" alt="" class="movie-poster">
-                </div>
-                <div>
+                <div class="popup_bottom"> 
+                    <div class="popup-body">
+                            <p id="popup-long-description"></p>                    
+                        </div>
                     Avec:
                     <p id="popup-actors"></p>
                 </div>
