@@ -1,0 +1,32 @@
+@media (width<=848px) {   
+    .movie-section:has(.show-more[aria-expanded="false"]) {
+        .movie-item:nth-child(n+3) {
+            display: none;
+        }
+    }
+
+    .movie-section:not(:has(.movies-container .movie-item:last-child:nth-child(n+3))) {
+        .show-more {
+            display: none;
+        }
+    }    
+}
+
+@media(1264px>width>848px) {   
+    .movie-section:has(.show-more[aria-expanded="false"]) {
+        .movie-item:nth-child(n+5) {
+            display: none;
+        }
+    }
+    .movie-section:not(:has(.movies-container .movie-item:last-child:nth-child(n+5))) {
+        .show-more {
+            display: none;
+        }
+    }    
+}
+
+@media(width>=1264px) {   
+    .show-more {
+        display: none;
+    }  
+}

@@ -8,3 +8,16 @@
     max-width: 18rem;
     background-color: white;
 }
+
+@media(1264px>width>848px) {       
+    .other-header{
+        grid-template-columns: 5rem 1fr;
+    }
+
+}
+
+@media(width>=1264px) {
+    .other-header{
+        grid-template-columns: 5rem 1fr;
+    }      
+}

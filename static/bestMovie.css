@@ -1,3 +1,4 @@
+
 .best-movie-section {
     padding: 1rem;
     border-style: solid;
@@ -34,4 +35,43 @@
     border-style: none;
     border-radius: 1rem;
     background-color: crimson;
+}
+
+@media(width<=848px){
+    .best-movie-ever-title {
+        text-align: center;
+    }
+}
+@media(1264px>width>848px) {
+   .best-movie-poster {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 182/268;
+
+        background-color: blueviolet;
+    }
+
+    .best-movie-container {
+        grid-template-columns: 20rem 1fr;
+    }
+
+    .best-movie-container__details-container__details-button {
+        justify-self: self-end;
+    } 
+}
+@media(width>=1264px){
+    .best-movie-container {
+        grid-template-columns: 20rem 1fr;
+    }
+
+    .best-movie-poster {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 182/268;
+
+    }
+
+    .best-movie-container__details-container__details-button {
+        justify-self: self-end;
+    }
 }

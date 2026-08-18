@@ -45,3 +45,14 @@ main {
     max-width: 20rem;
     height: auto;
 }
+
+@media (width<=848px) {
+    #jsi-title {
+        display: none;
+    }
+
+    .header-container {
+        justify-items: center;
+        grid-template-columns: 1fr;
+    }
+}

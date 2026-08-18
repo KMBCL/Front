@@ -33,3 +33,12 @@
 
         background-color: blueviolet;
     }
+
+@media(width>=1264px) {
+    .detail-popup{
+        max-width: 40rem;        
+    }
+    .popup_top{
+        grid-template-columns: 1fr 15rem;
+    }    
+}
