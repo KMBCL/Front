@@ -3,7 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="static/style.css">       
+        <link rel="stylesheet" href="static/style.css">     
+        <link rel="stylesheet" href="static/mainHeader.css">    
         <link rel="stylesheet" href="static/showmore.css">
         <link rel="stylesheet" href="static/bestMovies.css">
         <link rel="stylesheet" href="static/bestMovie.css">
@@ -16,26 +17,22 @@
 
     <body>
         <div class="main-container">
-            <nav>                
-                <div class="header-container">
-                    <img class="jsi-logo" src="static/img/JSI-transparent-512.png" alt="">
-                    <h1 id="jsi-title"> Vidéo à la demande</h1>
-                </div>
-            </nav>
+            <header class="main-header">             
+                <img class="main-header__logo" src="static/img/JSI-transparent-512.png" alt="">
+                <h1 class="main-header__title"> Vidéo à la demande</h1>              
+            </header>
 
-            <main>
-                
-                <section class="best-movie-section" >                  
-                    <h2 class="best-movie-ever-title">Best Movie ever :</h2>
-                    <div class="best-movie-container" id="best-movie">
-                        <!-- feeded -->
-                         <div class="best-movie-container__poster-container">
+            <main>                
+                <section class="best-movie" >                  
+                    <h2 class="best-movie__title">Best Movie ever :</h2>
+                    <div class="best-movie__container" id="best-movie">                    
+                         <div class="container__poster-container">
                             <img class="best-movie-poster" src="" alt="Movie Poster" id="best-movie-poster">
                          </div >
-                         <div class="best-movie-container__details-container">
-                            <h3 class="best-movie-container__details-container__h3" id="best-movie-title"></h3>
-                            <p class="best-movie-container__details-container__p" id="best-movie-description"></p>
-                            <button class="best-movie-container__details-container__details-button" id="best-movie-detail">Details</button>
+                         <div class="best-movie__container__details-container">
+                            <h3 class="best-movie__container__details-container__h3" id="best-movie-title"></h3>
+                            <p class="best-movie__container__details-container__p" id="best-movie-description"></p>
+                            <button class="best-movie__container__details-container__details-button" id="best-movie-detail">Details</button>
                          </div>
                     </div>
                 </section>

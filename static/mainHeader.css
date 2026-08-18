@@ -1,0 +1,33 @@
+.main-header {
+    display: grid;
+    grid-template-columns: 20rem 1fr;
+
+    align-items: center;
+
+    border-style: solid;
+    border-width: 0.1rem;
+    border-color: black;
+    margin: 1rem;    
+}
+
+.main-header__title {
+    display: grid;
+    align-items: center;
+}
+
+.main-header__logo {
+    width: 100%;
+    max-width: 20rem;
+    height: auto;
+}
+
+@media (width<=848px) {
+    .main-header__title {
+        display: none;
+    }
+
+    .main-header {
+        justify-items: center;
+        grid-template-columns: 1fr;
+    }
+}
