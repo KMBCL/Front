@@ -4,52 +4,61 @@ import { setSelectListener } from "./otherGenres.js";
 import { popMovieDetail, setSummonDetailButtonListener, setCloseDetailPopupListener } from "./popup.js";
 import { setShorMoreListeners } from "./showMore.js";
 
-
-async function main() {
-
-
-    const bestMoviesElement = document.getElementById("best-movies");
-    const bestHorrorMoviesElement = document.getElementById("best-horror-movies");
-    const bestActionMoviesElement = document.getElementById("best-action-movies");
-    const bestOtherMoviesElement = document.getElementById("best-others-movies");
-    const bestMovieDetailButton = document.getElementById("best-movie-detail");
-    const closePopupElement = document.getElementById("close-popup");
-
-    const bestMoviesPromise = fetchBestMovies();
-    const bestHorrorMoviesPromise = fetchGenreBestMovies("Horror");
-    const bestActionMoviesPromise = fetchGenreBestMovies("Action");
+async function feedOtherGenre(){
     const genresPromise = fetchGenres();
 
+    const bestOtherMoviesElement = document.getElementById("best-others-movies");
+    setSummonDetailButtonListener(bestOtherMoviesElement);
     
-    const bestHorrorMovies = await bestHorrorMoviesPromise;
-    const bestActionMovies = await bestActionMoviesPromise;
-    const genres = await genresPromise;
-
-    // promise.all bestHorrorMovies bestActionMovies genres
-
-    const bestMovies = await bestMoviesPromise;
-    const bestMoviesDetail = await fetchMovieDetail(bestMovies.slice(0, 1)[0].id);
-
-    // bestMovies >> bestMoviesDetail
-
-    displayBestMovie(bestMoviesDetail);
+    const genres = await genresPromise; 
     displayOtherGenres(genres);
+}
 
-    displayMovies(bestMovies.slice(1), bestMoviesElement);
+async function feedBestMovieByCategories(){
+    const bestHorrorMoviesPromise = fetchGenreBestMovies("Horror");
+    const bestActionMoviesPromise = fetchGenreBestMovies("Action");
+
+    const bestHorrorMoviesElement = document.getElementById("best-horror-movies");
+    const bestActionMoviesElement = document.getElementById("best-action-movies");
+
+    const bestHorrorMovies = await bestHorrorMoviesPromise
+    const bestActionMovies = await bestActionMoviesPromise
+
     displayMovies(bestHorrorMovies, bestHorrorMoviesElement);
     displayMovies(bestActionMovies, bestActionMoviesElement);
 
-
-
-    setSummonDetailButtonListener(bestMovieDetailButton);
-    setSummonDetailButtonListener(bestMoviesElement);
     setSummonDetailButtonListener(bestHorrorMoviesElement);
     setSummonDetailButtonListener(bestActionMoviesElement);
-    setSummonDetailButtonListener(bestOtherMoviesElement);
+}
 
-    setSelectListener();
+async function feedBestMovies(){
+    const bestMoviesPromise = fetchBestMovies();
+
+    const bestMoviesElement = document.getElementById("best-movies");
+    setSummonDetailButtonListener(bestMoviesElement);
+
+    const bestMovies = await bestMoviesPromise;
+    displayMovies(bestMovies.slice(1), bestMoviesElement);
+    return bestMovies;
+}
+
+async function feedBestMovie(bestMovies){
+    const bestMovieDetailButton = document.getElementById("best-movie-detail");
+    setSummonDetailButtonListener(bestMovieDetailButton);
+
+    const bestMoviesDetail = await fetchMovieDetail(bestMovies.slice(0, 1)[0].id);
+    displayBestMovie(bestMoviesDetail);
+}
+
+function loadPopup(){
+    const closePopupElement = document.getElementById("close-popup");
     setCloseDetailPopupListener(closePopupElement);
+}
 
+async function main() {              
+    Promise.all ([feedOtherGenre(), feedBestMovieByCategories(),feedBestMovies().then(feedBestMovie)]) 
+    loadPopup()    ;
+    setSelectListener();  
     setShorMoreListeners();
     console.log("loaded");
 }
