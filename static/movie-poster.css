@@ -1,0 +1,29 @@
+.movie-poster,
+.best-movie__poster
+ {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+
+    object-fit: cover;
+    object-position: center;
+    background-color: blueviolet;
+}
+
+@media(1264px>width>848px) {
+   .best-movie__poster {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 182/268;
+
+        background-color: blueviolet;
+    }    
+}
+@media(width>=1264px){   
+    .best-movie__poster {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 182/268;
+
+    }
+}

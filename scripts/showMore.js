@@ -20,7 +20,7 @@ export function setShowMoreListener(element) {
 }
 
 export function setShorMoreListeners() {
-    const showMoreButtons = document.getElementsByClassName("show-more");
+    const showMoreButtons = document.getElementsByClassName("best-movies__show-more");
 
     for (const button of showMoreButtons) {
         setShowMoreListener(button);

@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="static/showmore.css">
         <link rel="stylesheet" href="static/best-movies.css">
         <link rel="stylesheet" href="static/best-movie.css">
+        <link rel="stylesheet" href="static/movie-poster.css"> 
         <link rel="stylesheet" href="static/other-genre.css">
         <link rel="stylesheet" href="static/popup.css">
         <title>JustStreamIt</title>
@@ -24,62 +25,62 @@
 
             <main>                
                 <section class="best-movie" >                  
-                    <h2 class="best-movie__title">Best Movie ever :</h2>
-                    <div class="best-movie__container" id="best-movie">                    
-                         <div class="container__poster-container">
-                            <img class="best-movie-poster" src="" alt="Movie Poster" id="best-movie-poster">
+                    <h2 class="best-movie__frame-title">Meilleur film :</h2>
+                    <div class="best-movie__frame" id="best-movie">                    
+                         <div class="best-movie__poster-frame">
+                            <img class="best-movie__poster" src="" alt="Movie Poster" id="best-movie-poster">
                          </div >
-                         <div class="best-movie__container__details-container">
-                            <h3 class="best-movie__container__details-container__h3" id="best-movie-title"></h3>
-                            <p class="best-movie__container__details-container__p" id="best-movie-description"></p>
-                            <button class="best-movie__container__details-container__details-button" id="best-movie-detail">Details</button>
+                         <div class="best-movie__details-frame">
+                            <h3 class="best-movie__title" id="best-movie-title"></h3>
+                            <p class="best-movie__description" id="best-movie-description"></p>
+                            <button class="best-movie__show-details" id="best-movie-detail">Details</button>
                          </div>
                     </div>
                 </section>
 
-                <section class="movie-section">
-                    <h2 class="category-best-movies-title">Best movies</h2>
-                    <ul class="movies-container" id="best-movies">
+                <section class="best-movies">
+                    <h2 class="best-movies__frame-title">Best movies</h2>
+                    <ul class="best-movies__frame" id="best-movies">
                         <!-- feeded -->
                     </ul>
-                    <div class="show-more-section">
-                        <button class="show-more" aria-expanded="false" aria-controls="best-movies">Show more</button>
+                    <div class="best-movies__show-more-frame">
+                        <button class="best-movies__show-more" aria-expanded="false" aria-controls="best-movies">Show more</button>
                     </div>
                 </section>
 
-                <section class="movie-section">
-                    <h2 class="category-best-movies-title">Best Horror</h2>
-                    <ul class="movies-container" id="best-horror-movies">
+                <section class="best-movies">
+                    <h2 class="best-movies__frame-title">Best Horror</h2>
+                    <ul class="best-movies__frame" id="best-horror-movies">
                         <!-- feeded -->
                     </ul>
-                    <div class="show-more-section">
-                        <button class="show-more" aria-expanded="false" aria-controls="best-horror-movies">Show more</button>
+                    <div class="best-movies__show-more-frame">
+                        <button class="best-movies__show-more" aria-expanded="false" aria-controls="best-horror-movies">Show more</button>
                     </div>
                 </section>
 
-                <section class="movie-section">
-                    <h2 class="category-best-movies-title">Best Action</h2>
-                    <ul class="movies-container" id="best-action-movies">
+                <section class="best-movies">
+                    <h2 class="best-movies__frame-title">Best Action</h2>
+                    <ul class="best-movies__frame" id="best-action-movies">
                         <!-- feeded -->
                     </ul>
-                    <div class="show-more-section">
-                        <button class="show-more" aria-expanded="false" aria-controls="best-action-movies">Show more</button>
+                    <div class="best-movies__show-more-frame">
+                        <button class="best-movies__show-more" aria-expanded="false" aria-controls="best-action-movies">Show more</button>
                     </div>
                 </section>
 
-                <section class="movie-section">
+                <section class="best-movies">
                     <div class="other-header">
-                        <h2 class="category-best-movies-title">Others</h2>
+                        <h2 class="best-movies__frame-title">Others</h2>
                         <select id="other-genres">
                         <!-- feeded -->
                         </select>
                     </div>
                     
-                    <ul class="movies-container" id="best-others-movies">
+                    <ul class="best-movies__frame" id="best-others-movies">
                         <!-- feeded -->
                     </ul>
-                    <div class="show-more-section">
-                        <button class="show-more" aria-expanded="false" aria-controls="best-others-movies">Show more</button>
+                    <div class="best-movies__show-more-frame">
+                        <button class="best-movies__show-more" aria-expanded="false" aria-controls="best-others-movies">Show more</button>
                     </div>
                 </section>
   
@@ -88,37 +89,30 @@
             <footer>Author : KMB</footer>
         </div>
 
-        <dialog id="detail-popup" class="detail-popup">
-            <div class="popup-container">
-                <button id="close-popup">Close</button>
-                <div class="popup_top">
+        <dialog  class="detail-popup" id="detail-popup">
+            <div class="detail-popup__frame">
+                <button class="detail-popup__close" id="close-popup">Close</button>
+                <div class="detail-popup___top">
                     <div>
-                        <div class="popup-header">                    
-                            <div class="popup-detail-container">
-                                <h2 id="popup-movie-title"></h2>
-                                    <ul class="popup-movie-details">
-                                        <li id="popup-year-genres"></li>
-                                        <li id="popup-rated-duration"></li>
-                                        <li id="popup-imdb-score"></li>
-                                        <li id="popup-income"></li>
-                                    </ul>
-                                <h3>Directed by : 
-                                </h3>
-                                <p id="popup-directors"></p>
-                            </div>                    
-                        </div>
-                        
-                    </div>
-                    <div class="popup-poster-container">
-                        <img id="popup-poster" src="" alt="">
+                        <h2 id="popup-movie-title"></h2>
+                            <ul class="popup-movie-details">
+                                <li id="popup-year-genres"></li>
+                                <li id="popup-rated-duration"></li>
+                                <li id="popup-imdb-score"></li>
+                                <li id="popup-income"></li>
+                            </ul>
+                        <h3>Directed by : 
+                        </h3>
+                        <p id="popup-directors"></p>
+                    </div>   
+                    <div class="detail-popup___poster-frame">
+                        <img class="detail-popup___poster" id="popup-poster" src="" alt="">
                     </div>
                 </div>
-                <div class="popup_bottom"> 
-                    <div class="popup-body">
-                            <p id="popup-long-description"></p>                    
-                        </div>
+                <div class="detail-popup___bottom"> 
+                    <p id="popup-long-description"></p> 
                     Avec:
-                    <p id="popup-actors"></p>
+                    <p class="detail-popup__actors" id="popup-actors"></p>
                 </div>
             </div>
         </dialog>

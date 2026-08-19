@@ -1,13 +1,12 @@
-.detail-popup{    
-    
+.detail-popup{       
     max-width: 25rem;
 }
 
-.popup-container{
+.detail-popup__frame{
     display: grid;
 }
 
-.popup_top{
+.detail-popup___top{
     display: grid;
 }
 
@@ -16,7 +15,13 @@
 
 }
 
-#close-popup{
+.detail-popup___poster-frame{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+
+.detail-popup__close{
     justify-self: center;
     height: 2rem;
     width: 5rem;
@@ -26,9 +31,9 @@
     background-color: crimson;
 }
 
-#popup-poster {
+.detail-popup___poster {
         width: 100%;
-        height: auto;
+        height: 100%;
         aspect-ratio: 182/268;
 
         background-color: blueviolet;
@@ -38,7 +43,7 @@
     .detail-popup{
         max-width: 40rem;        
     }
-    .popup_top{
-        grid-template-columns: 1fr 15rem;
+    .detail-popup___top{
+        grid-template-columns: 1fr 10rem;
     }    
 }
