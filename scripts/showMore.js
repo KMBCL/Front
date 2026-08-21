@@ -1,7 +1,7 @@
 const EXPANDED = "true";
 const COLLAPSED = "false";
-const SHOW_MORE = "Show More";
-const SHOW_LESS = "Show less";
+const SHOW_MORE = " Voir plus";
+const SHOW_LESS = "Voir moins";
 
 function showMore(event) {
     const showMoreButton = event.target;

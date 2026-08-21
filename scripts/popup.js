@@ -39,7 +39,7 @@ export async function popMovieDetail(movieDetails) {
 
     movieTitleTag.textContent = movieDetails.title;
     moviePoster.src = movieDetails.image_url;
-    moviePoster.alt = "IMG"
+    moviePoster.alt = movieDetails.title;
     movieLongDescriptionTag.textContent = movieDetails.long_description;
     movieActorsTag.textContent = movieDetails.actors;
     movieYearGenresTag.textContent = movieDetails.year + " - " + movieDetails.genres;

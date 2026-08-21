@@ -1,0 +1,25 @@
+.main-container{
+    display: grid;
+    justify-items: center;   
+
+    gap: 1rem;
+    padding: 1rem;
+    }
+
+@media (width<=848px) {
+    .main-container {
+        max-width: 27rem;
+    }
+}
+
+@media (1264px>width>848px) {
+    .main-container {
+        max-width: 53rem;
+    }
+}
+
+@media(width>=1264px) {   
+    .main-container {
+        max-width: 79rem;
+    }
+}

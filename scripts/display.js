@@ -1,31 +1,26 @@
-function createDetailButton(value) {
+function createDetailButton(movie) {
     const detailButton = document.createElement("button");
 
-    detailButton.textContent = "Details";
-    detailButton.value = value;
+    detailButton.textContent = "Détails";
+    detailButton.value = movie.id;
     detailButton.className = "movie-item__detail-button";
     return detailButton;
 }
 
-function createImageTag(value) {
+function createImageTag(movie) {
     const imageTag = document.createElement("img");
-    imageTag.src = value;
-    imageTag.alt = "Movie Poster";
+    console.log("image url", movie.image_url)
+    imageTag.src = movie.image_url;
+    imageTag.alt = movie.title;
     imageTag.className = "movie-poster";
     return imageTag;
 }
 
-function createTitleTag(value) {
+function createTitleTag(movie) {
     const titleTag = document.createElement("h3");
     titleTag.className = "movie-item__title"
-    titleTag.textContent = value;
+    titleTag.textContent = movie.title;
     return titleTag;
-}
-
-function createShortDescription(value) {
-    const paragraph = document.createElement("p");
-    paragraph.textContent = value;
-    return paragraph;
 }
 
 function createMovieBanner() {
@@ -41,8 +36,6 @@ export function createLiTag() {
 
 }
 
-
-
 export function createGenreOption(genre) {
     const newOption = document.createElement("option");
     newOption.value = genre.name;
@@ -56,16 +49,17 @@ export function displayBestMovie(movie, element) {
     const shortDescription = document.getElementById("best-movie-description");
 
     imageTag.src = movie.image_url;
+    imageTag.alt = movie.title;
     titleTag.textContent = movie.title;
     shortDescription.textContent = movie.description;
 }
 
-export function displayMovies(itemList, element) {
-    for (const item of itemList) {
+export function displayMovies(movies, element) {
+    for (const movie of movies) {
         const movieItemTag = createLiTag();
-        const imageTag = createImageTag(item.image_url);
-        const titleTag = createTitleTag(item.title);
-        const detailButton = createDetailButton(item.id);
+        const imageTag = createImageTag(movie);
+        const titleTag = createTitleTag(movie);
+        const detailButton = createDetailButton(movie);
         const movieBanner = createMovieBanner();
 
         movieBanner.appendChild(titleTag);
